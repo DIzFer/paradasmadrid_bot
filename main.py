@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 
 from telegram.ext import Updater, CommandHandler
-
-tokenfile = open("token", "r")
-token = tokenfile.read().strip()
+import tokens
+TOKEN = tokens.TELEGRAM["token"]
+ID_CLIENT = tokens.API_TRANSPORTES["id_client"]
+KEY = tokens.API_TRANSPORTES["key"]
 
 
 def start(bot, update):
@@ -21,7 +22,7 @@ Se te devolveran los buses que estan por llegar, y lo que tardaran en llegar
 """)
 
 
-updater = Updater(token)
+updater = Updater(TOKEN)
 
 updater.dispatcher.add_handler(CommandHandler('start', start))
 updater.dispatcher.add_handler(CommandHandler('help', help))
