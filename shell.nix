@@ -5,5 +5,7 @@ stdenv.mkDerivation rec {
   buildInputs = [
     python3
     python3Packages.python-telegram-bot
+    python3Packages.pylint
+    python3Packages.autopep8
   ];
 }
