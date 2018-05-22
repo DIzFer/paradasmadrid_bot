@@ -1,0 +1,11 @@
+"""
+Aquí hay que insertar los tokens de las APIs relevantes. El primero se obtiene contactando con t.me/botfather, y los de la EMT en opendata.emtmadrid.es/Formulario
+"""
+
+TELEGRAM = dict(
+    token="",
+)
+API_TRANSPORTES = dict(
+    id_client="",
+    key="",
+)
