@@ -2,10 +2,14 @@ with import <nixpkgs> {};
 stdenv.mkDerivation rec {
   name = "paradasmadrid_bot";
   env = buildEnv { name = name; paths = buildInputs; };
-  buildInputs = [
+  buildInputs = with python3Packages; [
+    # Lo obvio
     python3
-    python3Packages.python-telegram-bot
-    python3Packages.pylint
-    python3Packages.autopep8
+    python-telegram-bot
+    # Queremos código bonito y consistente
+    pylint
+    autopep8
+    # Dependencias
+    requests
   ];
 }
