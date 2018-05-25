@@ -13,11 +13,13 @@ def obtener_autobuses(parada, claves):
 
 def presentar_autobuses(json): 
     autobuses = ""
-    autobus = "{} en {} minutos"
+    autobus = "{} en {} minutos\n"
     for llegada in json["arrives"]:
         if llegada["busTimeLeft"] == 999999:
             continue
-        autobuses += autobus.format(llegada["lineId"], int(round(llegada["busTimeLeft"]/60, 0)))
-        autobuses += "\n"
+        elif int(round(llegada["busTimeLeft"]/60, 0)) == 0:
+            autobuses += "{} ya\n".format(llegada["lineId"])
+        else:
+            autobuses += autobus.format(llegada["lineId"], int(round(llegada["busTimeLeft"]/60, 0)))
     return autobuses
 
