@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
 
+import logging
 from telegram.ext import Updater, CommandHandler
 import tokens
+
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                    level=logging.INFO)
+
 TOKEN = tokens.TELEGRAM["token"]
 ID_CLIENT = tokens.API_TRANSPORTES["id_client"]
 KEY = tokens.API_TRANSPORTES["key"]
