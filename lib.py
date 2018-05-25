@@ -8,7 +8,6 @@ def obtener_autobuses(parada, claves):
         "idStop": parada,
         "cultureInfo": "ES"
         }
-    print(datos)
     return requests.post(url, datos, verify=True).json()
 
 def presentar_autobuses(json): 
