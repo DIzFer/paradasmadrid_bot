@@ -27,10 +27,10 @@ Se te devolveran los buses que estan por llegar, y lo que tardaran en llegar
 """)
 
 
-updater = Updater(TOKEN)
+UPDATER = Updater(TOKEN)
 
-updater.dispatcher.add_handler(CommandHandler('start', start))
-updater.dispatcher.add_handler(CommandHandler('help', help))
+UPDATER.dispatcher.add_handler(CommandHandler('start', start))
+UPDATER.dispatcher.add_handler(CommandHandler('help', help))
 
-updater.start_polling()
-updater.idle()
+UPDATER.start_polling()
+UPDATER.idle()
